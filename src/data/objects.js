@@ -107,7 +107,7 @@ export const objects = [
     name: "Rock",
     type: "non-living",
     image: RockImg,
-    x: "10%",
+    x: "50%",
     y: "70%",
     width: "230px",
   },

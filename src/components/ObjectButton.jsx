@@ -7,7 +7,14 @@ function ObjectButton({
     <div
       className={`
         object-wrapper
-        ${discovered ? object.type : ""}
+        ${
+          discovered
+            ? object.type ===
+              "living"
+              ? "correct"
+              : "wrong"
+            : ""
+        }
       `}
       onClick={onClick}
       style={{
@@ -21,18 +28,17 @@ function ObjectButton({
         className="object-image"
         alt={object.name}
       />
-      {
-        discovered && (
-          <div className={`
+
+      {discovered && (
+        <div
+          className={`
             label
             ${object.type}
-          `}> 
-            {object.name}
-            <br />
-            ({object.type})
-          </div>
-        )
-      }
+          `}
+        >
+          {object.name}
+        </div>
+      )}
     </div>
   );
 }
