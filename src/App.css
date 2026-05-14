@@ -13,7 +13,7 @@
 
 * {
   margin: 0;
-  padding: 0;
+  padding: ;
   box-sizing: border-box;
 }
 
@@ -64,49 +64,65 @@
 }
 
 /* ── TITLE ── */
-.title {
-  font-family: 'Baloo 2', cursive;
-  font-weight: 800;
-  font-size: 62px;
-  text-align: center;
-  color: #fff;
-  letter-spacing: 1px;
-  text-shadow:
-    0 2px 0 #c8860a,
-    0 4px 0 #a86a00,
-    0 8px 24px rgba(0,0,0,0.45),
-    0 0 40px rgba(255,220,80,0.4);
-  paint-order: stroke fill;
+.welcome-screen {
   position: relative;
-  z-index: 1;
-  animation: titleBounce 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+  overflow: hidden;
 }
 
-@keyframes titleBounce {
-  from { opacity: 0; transform: scale(0.6) translateY(-30px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+.logo-container {
+  position: relative;
+  z-index: 2;
+  animation: logoDrop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+   background: radial-gradient(
+    ellipse 75% 60% at 50% 50%,
+    rgba(0, 0, 0, 0.411) 0%,
+    rgba(0, 0, 0, 0.425) 55%,
+    transparent 100%
+  );  
+  padding: 18px 32px;
+  border-radius: 50%;
+}
+ 
+.game-logo {
+  max-width: min(1540px, 85vw);
+  width: 100%;
+  filter:
+    drop-shadow(0 0 3px rgba(0,0,0,0.9))
+    drop-shadow(0 0 8px rgba(0,0,0,0.7))
+    drop-shadow(0 6px 6px rgba(0,0,0,0.5))
+    drop-shadow(0 18px 40px rgba(0,0,0,0.4));
+  animation: logoWobble 5s 1s ease-in-out infinite;
+}
+ 
+@keyframes logoDrop {
+  from { opacity: 0; transform: scale(0.55) translateY(-40px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+ 
+/* very gentle idle wobble */
+@keyframes logoWobble {
+  0%, 100% { transform: rotate(-1deg) scale(1);    }
+  50%       { transform: rotate( 1deg) scale(1.02); }
 }
 
-/* ── MAIN BUTTON ── */
+/* Start game button */
 .main-button {
   position: relative;
   z-index: 1;
-  padding: 16px 52px;
+  padding: 20px 56px;
   border: none;
   border-radius: 50px;
   font-family: 'Baloo 2', cursive;
-  font-size: 26px;
+  font-size:44px;
   font-weight: 800;
   cursor: pointer;
   color: #5a3000;
   letter-spacing: 0.5px;
-
   background: linear-gradient(180deg, #ffe566 0%, #FFD700 40%, #f4a800 100%);
   box-shadow:
     0 6px 0 #b87800,
     0 10px 30px rgba(0,0,0,0.35),
     inset 0 2px 6px rgba(255,255,255,0.6);
-
   transition: transform 0.12s ease, box-shadow 0.12s ease;
   animation: buttonPop 0.6s 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
 }
@@ -173,27 +189,12 @@
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
-/* ── MASCOT ── */
-.mascot {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 200px;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.4));
-  animation: mascotFloat 3s ease-in-out infinite;
-}
-
-@keyframes mascotFloat {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
 /* ── OBJECT WRAPPER ── */
 .object-wrapper {
   position: absolute;
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
-              filter 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1)
+  filter 0.25s ease;
 }
 
 .object-wrapper:hover {
@@ -206,10 +207,8 @@
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));
 }
 
-/* ── GLOW STATES ── */
-/* Living = GREEN glow */
-.object-wrapper.correct
-.object-image {
+/* Glow Green for living and red for non-living */
+.object-wrapper.correct .object-image {
 
   filter:
     drop-shadow(
@@ -327,36 +326,21 @@
 }
 
 /* ── END SCREEN TEXT ── */
-/* =========================
-   SIMPLE MAGICAL END SCREEN
-========================= */
-
 .end-box {
   position: relative;
   z-index: 2;
-
+  width: 80%;
   padding: 40px 50px;
-
   border-radius: 35px;
-
   text-align: center;
-
-  background:
-    rgba(255,255,255,0.18);
-
+  background:rgba(255,255,255,0.18);
   backdrop-filter: blur(10px);
-
-  border:
-    2px solid
-    rgba(255,255,255,0.35);
-
+  border: 2px solid rgba(255,255,255,0.35);
   box-shadow:
     0 10px 35px
     rgba(0,0,0,0.18),
-
     0 0 40px
     rgba(255,220,100,0.18);
-
   animation:
     magicalFloat 4s
     ease-in-out infinite,
@@ -366,12 +350,9 @@
 /* soft magical glow */
 .end-box::before {
   content: "";
-
   position: absolute;
   inset: -25px;
-
   z-index: -1;
-
   background:
     radial-gradient(
       circle,
@@ -382,46 +363,19 @@
   filter: blur(20px);
 }
 
-.end-title {
-  font-family:
-    'Baloo 2',
-    cursive;
-
-  font-size: 68px;
-  font-weight: 900;
-
-  color: #fff;
-
-  text-shadow:
-    0 3px 10px
-    rgba(255,190,60,0.5);
-
-  margin-bottom: 10px;
-}
-
 .end-stars {
-  font-family:
-    'Nunito',
-    sans-serif;
-
-  font-size: 34px;
+  font-family:'Nunito',sans-serif;
+  font-size: 64px;
   font-weight: 900;
-
   color: #ffe76b;
-
   margin-bottom: 18px;
 }
 
 .end-text {
-  font-size: 26px;
+  font-size: 36px;
   font-weight: 700;
   color: white;
   margin-bottom: 10px;
-}
-
-.end-small {
-  font-size: 20px;
-  color: rgba(255,255,255,0.9);
 }
 
 /* animations */
@@ -446,22 +400,17 @@
 .instruction-overlay {
   position: absolute;
   inset: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 999;
-
   pointer-events: auto;
 }
 
 /* Magical popup card */
 .instruction-modal {
   position: relative;
-
-  width: min(700px, 90vw);
-
+  width: min(1000px, 90vw);
   background:
     linear-gradient(
       160deg,
@@ -469,22 +418,18 @@
       #f2fde4 55%,
       #e8f9d2 100%
     );
-
   border-radius: 38px;
-
   padding: 34px 32px 28px;
-  size: 24px;
+  size: 44px;
+  font-size: 36PX,;
   text-align: center;
-
   border: 4px solid #72c83e;
-
   box-shadow:
     0 0 25px rgba(167, 255, 70, 0.35),
     0 0 60px rgba(120, 255, 80, 0.28),
     0 0 120px rgba(255, 230, 120, 0.18),
     0 25px 50px rgba(0, 0, 0, 0.18),
     inset 0 2px 0 rgba(255,255,255,0.95);
-
   animation:
     popupEnter 0.55s
     cubic-bezier(
@@ -500,12 +445,9 @@
 /* glowing magical aura */
 .instruction-modal::before {
   content: "";
-
   position: absolute;
   inset: -40px;
-
   border-radius: 50px;
-
   background:
     radial-gradient(
       circle,
@@ -513,11 +455,8 @@
       rgba(255,230,100,0.18) 35%,
       rgba(255,255,255,0) 75%
     );
-
   z-index: -1;
-
   filter: blur(22px);
-
   animation:
     glowPulse 3s ease-in-out infinite;
 }
@@ -534,10 +473,8 @@
 .instruction-button {
   margin-top: 22px;
   padding: 15px 42px;
-
   border: none;
   border-radius: 50px;
-
   background:
     linear-gradient(
       180deg,
@@ -545,22 +482,15 @@
       #6ec41e 45%,
       #4e9e0e 100%
     );
-
-  font-family: 'Baloo 2',
-    cursive;
-
+  font-family: 'Baloo 2',cursive;
   font-size: 23px;
   font-weight: 900;
-
   color: #183f00;
-
   cursor: pointer;
-
   box-shadow:
     0 6px 0 #2d7000,
     0 12px 28px rgba(40,110,5,0.32),
     inset 0 2px 0 rgba(255,255,255,0.45);
-
   transition:
     all 0.18s
     cubic-bezier(

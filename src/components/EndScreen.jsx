@@ -1,12 +1,10 @@
+import GreatJob from '../assets/greatjob1.png';
 function EndScreen({ stars }) {
   return (
     <div className="screen">
 
       <div className="end-box">
-
-        <h1 className="end-title">
-          🎉 Great Job!
-        </h1>
+        <img src={GreatJob} alt="Great Job!" className="end-image" />
 
         <h2 className="end-stars">
           ⭐ Stars Earned: {stars}
@@ -14,10 +12,6 @@ function EndScreen({ stars }) {
 
         <p className="end-text">
           You found the living things!
-        </p>
-
-        <p className="end-small">
-          Thanks for playing 🌿
         </p>
 
       </div>

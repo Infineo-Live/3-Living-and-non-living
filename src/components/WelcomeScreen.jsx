@@ -9,12 +9,11 @@ function WelcomeScreen({ startGame }) {
           className="game-logo"
         />
       </div>
-      <button
-        className="main-button"
-        onClick={startGame}
-      >
-        Start Adventure
+      <button className="main-button" onClick={startGame}>
+        🚀 Start Adventure
       </button>
+
+      <div className="scroll-hint">▼</div>
 
     </div>
   );

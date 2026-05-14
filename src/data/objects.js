@@ -89,9 +89,9 @@ export const objects = [
     name: "Trash Can",
     type: "non-living",
     image: TrashCanImg,
-    x: "78%",
-    y: "60%",
-    width: "70px",
+    x: "80%",
+    y: "65%",
+    width: "200px",
   },
   {
     id: 11,
