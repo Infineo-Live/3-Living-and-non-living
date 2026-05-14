@@ -265,6 +265,13 @@
     drop-shadow(0 0 22px var(--non-living-glow))
     drop-shadow(0 6px 10px rgba(0,0,0,0.3));
 }
+.object-wrapper .object-image {
+  transition:
+    filter 0.5s ease,
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+ 
+
 
 /* ── LABELS ── */
 .label {

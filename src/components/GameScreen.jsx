@@ -112,14 +112,13 @@ const wrongSound =
           </div>
 
           {objects.map(object => (
-            <ObjectButton
-              key={object.id}
-              object={object}
-              onClick={() =>
-                handleObjectClick(object)
-              }
-            />
-          ))}
+  <ObjectButton
+    key={object.id}
+    object={object}
+    discovered={clickedObjects.includes(object.id)}  // ✅ add this
+    onClick={() => handleObjectClick(object)}
+  />
+))}
         </>
       )}
 

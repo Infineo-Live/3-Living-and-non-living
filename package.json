@@ -2,7 +2,6 @@
   "name": "living-and-nonliving",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://infineo-live.github.io/3-Living-and-non-living/",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -63,7 +63,7 @@ export const objects = [
     type: "non-living",
     image: GazeboImg,
     x: "54%",
-    y: "36%",
+    y: "35%",
     width: "840px",
   },
   {
