@@ -111,7 +111,7 @@ html {
   100% { opacity: 0.4; transform: translateY(-8px); }
 }
 
-/* ─── WELCOME SCREEN ─── */
+/* WELCOME SCREEN  */
 .welcome-screen {
   justify-content: center;
   gap: clamp(16px, 2vh, 24px);
@@ -152,7 +152,7 @@ html {
   50%       { transform: rotate(1deg)  scale(1.02); }
 }
 
-/* ─── MAIN BUTTON ─── */
+/* MAIN BUTTON */
 .main-button {
   position: relative;
   z-index: 2;
@@ -231,7 +231,7 @@ html {
   z-index: 0;
 }
 
-/* ─── TOP BAR ─── */
+/*  TOP BAR  */
 .top-bar {
   position: absolute;
   top: clamp(10px, 2vh, 16px);
