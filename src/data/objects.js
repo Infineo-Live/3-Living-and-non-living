@@ -29,7 +29,7 @@ export const objects = [
     image: BirdImg,
     x: "77%",
     y: "10%",
-    width: "10%",
+    width: "7%",
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ export const objects = [
     image: GirlImg,
     x: "40%",
     y: "61%",
-    width: "18%",
+    width: "19%",
   },
   {
     id: 7,
@@ -82,8 +82,8 @@ export const objects = [
     type: "living",
     image: DuckImg,
     x: "82%",
-    y: "70%",
-    width: "6%",
+    y: "60%",
+    width: "8%",
   },
   {
     id: 10,
@@ -101,7 +101,7 @@ export const objects = [
     image: SquirrelImg,
     x: "20%",
     y: "83%",
-    width: "10%",
+    width: "7.4%",
   },
   {
     id: 12,
